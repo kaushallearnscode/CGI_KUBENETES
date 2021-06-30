@@ -1,0 +1,317 @@
+<style>
+  .btn-shine{
+  
+  
+  text-align: center;
+  color: #000000 ;
+  background: linear-gradient(to right, #000000 0, white 20%, #000000 40%) ;
+  
+  -webkit-background-clip : text ;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 800;
+  font-size: 30px;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  }
+  @keyframes shine{
+      0%{
+          background-position: 0;
+      }
+      60%{
+          background-position: 400px;
+      }
+      100%{
+          background-position: 930px;
+      }
+  }
+
+  html, body {
+  width: 100%;
+  height:100%;
+  }
+
+  body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #3f87a6, #ebf8e1, #f69d3c, #820fe0 , #0fe055);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+  }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
+  
+  .mainbox{
+    
+    padding-left: 35%;
+    width: auto;
+    height: auto; 
+    background-color:black;
+    border-radius: 7px;
+    font-size: 20px;
+    border: 1px solid;
+    box-shadow: 5px 10px 8px #888888;
+  }
+  
+  .container{
+    
+    padding-left: 35%;
+    display: none; 
+    background-color:black;
+    border: 1px solid;
+    border-radius: 7px;
+    font-size: 20px; 
+    box-shadow: 5px 10px 8px #888888;
+    margin-top: 50px;
+  }
+  
+
+  input { 
+      width: auto;
+      border-style: none ; 
+      background: transparent; 
+      border:solid white 1px; 
+      border-radius: 7px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      padding: 5px;
+  
+  }
+button { 
+  padding: 5px;
+  margin-left: 5px;
+  background: black; 
+  border:solid white 1px; 
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  }
+button:hover{
+  padding: 7px;
+  margin-left: 6px;
+  background: rgb(230, 9, 9); 
+  border:solid rgb(250, 250, 250) 1px; 
+  border-radius: 7px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+</style>
+<html>
+
+	
+  <title > kubernetes</title>
+
+    <body>
+      
+      <div id="d0" class="btn-shine" >
+        <h2 >KUBERNETES WEBUI</h2>
+        <p style="font-size: 20px;"> Is a  K8's webUI helps you to interact with kubernetes in a noraml English
+        language?<br>
+        <p style="font-size: 25px;">Features:</p>
+          <p style="font-size: 20px;">
+        -> It can launch pod with specific name given by user.<br>
+        -> Run deployment using image and name given by user.<br>
+        -> Expose services on given user input port number.<br>
+        -> Scale the replica according to user need.<br>
+        -> Delete complete environment created.<br>
+        -> Delete specific resources given by user.</p>
+      
+      </div><br>
+     <script>
+      function ank(){
+        var s = document.getElementById('in0').value
+        if(s.includes('launch') && s.includes('pod')==true)
+        {
+          document.getElementById("d2").style.display="block";
+          
+        } 
+           
+        else if(s.includes('deployment') && s.includes('run')==true)
+        {
+          document.getElementById('d4').style.display='block';
+        }
+        else if(s.includes('scale') && s.includes('deployment')==true)
+        {
+          document.getElementById('d5').style.display='block';
+        }
+        else if(s.includes('all') && s.includes('delete')==true)
+        {
+          document.getElementById('d7').style.display='block';
+        }
+        else if(s.includes('delete')==true)
+        {
+          document.getElementById('d6').style.display='block';
+        }
+        else if(s.includes('expose')==true)
+        {
+          document.getElementById('d8').style.display='block';
+        }
+        else if(s.includes('show')==true)
+        {
+          document.getElementById('d9').style.display='block';
+        }
+      }
+        function ank1(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in1").value
+            var j = document.getElementById("in2").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i+"&y="+j,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+        function ank2(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in3").value
+            var j = document.getElementById("in4").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i+"&y="+j,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+        function ank3(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in5").value
+            var j = document.getElementById("in6").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i+"&y="+j,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+        function ank4(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in9").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+        function ank5(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in7").value
+            var j = document.getElementById("in8").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i+"&y="+j,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+        function ank6(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in10").value
+            var j = document.getElementById("in11").value
+            var k = document.getElementById("in12").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i+"&y="+j+"&z="+k,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+        function ank7(){
+            var a = document.getElementById("in0").value
+            var i = document.getElementById("in13").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.56.103/cgi-bin/k8.py?s="+a+"&x="+i,false);
+            xhr.send();
+            var output = xhr.responseText;
+            document.getElementById("d3").innerHTML = output
+            
+        }
+      
+    
+    </script>
+    
+    
+    <div class="mainbox" id="d1" >
+    <p style="color: white;">Requirement:
+    <input id='in0' onfocus="document.getElementById('d3').innerHTML='',this.value=''"/> 
+    <button  onclick="ank(); ">RUN</button>
+	<pre>
+    <div id="d3" style="color: white;"></div>
+	</pre>
+    
+    </p><br/>
+    </div>
+    
+    <div class="container" id="d2"  >
+      <p id="p2" style="color: white;">Pod name:<input id="in1" /> </p>
+      <p id="p3" style="color: white;">Image Name:<input id="in2" /></p>
+      <button onclick="ank1(),document.getElementById('in1').value='',
+      document.getElementById('in2').value='',
+      document.getElementById('d2').style.display='none'">Submit</button><br>
+    </div>
+    
+    <div class="container" id="d4" >
+      <p id="p2" style="color: white;">Deployment name:<input id="in3" /> </p>
+      <p id="p3" style="color: white;">Image Name:<input id="in4" /></p>
+      <button onclick="ank2(),document.getElementById('in3').value='',
+      document.getElementById('in4').value='',
+      document.getElementById('d4').style.display='none'">Submit</button><br>
+    </div>
+    
+    <div class="container" id="d5" >
+      <p id="p2" style="color: white;">Deployment name:<input id="in5" /> </p>
+      <p id="p3" style="color: white;">No. of replicas:<input id="in6" /></p>
+      <button onclick="ank3(),document.getElementById('in5').value='',
+      document.getElementById('in6').value='',
+      document.getElementById('d5').style.display='none'">Submit</button><br>
+    </div>
+    
+    <div class="container" id="d6" >
+      <p id="p2" style="color: white;"> Service Name:<input id="in7" /> </p>
+      <p id="p3" style="color: white;">Name:<input id="in8" /></p>
+      <button onclick="ank5(),document.getElementById('in7').value='',
+      document.getElementById('in8').value='',
+      document.getElementById('d6').style.display='none'">Submit</button><br>
+    </div>
+    
+    <div class="container" id="d7" >
+      <p id="p2" style="color: white;">Confirm:<input id="in9" placeholder="type yes or no" /> </p>
+      <button onclick="ank4(),document.getElementById('in9').value='',
+      document.getElementById('d7').style.display='none'">Submit</button><br>
+    </div>
+    
+    <div class="container" id="d8" >
+      <p id="p2" style="color: white;">Service Name:<input id="in10" /> </p>
+      <p id="p3" style="color: white;">Name:<input id="in11" /></p>
+      <p id="p3" style="color: white;">Port No.:<input id="in12" /></p>
+      <button onclick="ank6(),document.getElementById('in10').value='',
+      document.getElementById('in11').value='',
+      document.getElementById('in12').value='',
+      document.getElementById('d8').style.display='none'">Submit</button><br>
+    </div>
+    
+    <div class="container" id="d9" >
+      <p id="p2" style="color: white;">Service Name:<input id="in13" /> </p>
+      <button onclick="ank7(),
+      document.getElementById('in13').value='',
+      document.getElementById('d9').style.display='none'">Submit</button><br>
+    </div>
+    
+    
+    </body>
+    </html>
+    
